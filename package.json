@@ -1,0 +1,10 @@
+{
+  "name": "shopify-first-month-free-starter",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "build": "shopify app build",
+    "test:function": "cargo test --manifest-path extensions/membership-first-month-free/Cargo.toml",
+    "fmt:function": "cargo fmt --manifest-path extensions/membership-first-month-free/Cargo.toml --check"
+  }
+}

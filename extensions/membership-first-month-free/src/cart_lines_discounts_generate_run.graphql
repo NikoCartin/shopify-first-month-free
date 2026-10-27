@@ -1,0 +1,25 @@
+query Input {
+  cart {
+    lines {
+      id
+      merchandise {
+        __typename
+        ... on ProductVariant {
+          id
+          product {
+            id
+            membershipOffer: metafield(namespace: "custom", key: "membership_offers") {
+              value
+            }
+          }
+        }
+      }
+    }
+  }
+  discount {
+    discountClasses
+    metafield(namespace: "starter", key: "membership-first-month-free-config") {
+      jsonValue
+    }
+  }
+}

@@ -1,0 +1,22 @@
+# Copy this file to shopify.app.toml after linking the project to an app you own.
+# Do not commit the real shopify.app.toml if it contains a merchant-specific client ID.
+client_id = "00000000000000000000000000000000"
+name = "First Month Free Starter"
+application_url = "https://shopify.dev/apps/default-app-home"
+embedded = true
+
+[build]
+automatically_update_urls_on_dev = true
+
+[webhooks]
+api_version = "2026-07"
+
+[access.admin]
+direct_api_mode = "online"
+embedded_app_direct_api_access = true
+
+[access_scopes]
+scopes = "read_products,read_discounts,write_discounts"
+
+[auth]
+redirect_urls = [ "https://shopify.dev/apps/app-home/api/auth" ]

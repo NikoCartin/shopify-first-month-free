@@ -1,0 +1,7 @@
+shopify.app.toml
+.env
+.env.*
+node_modules/
+.shopify/
+target/
+.DS_Store

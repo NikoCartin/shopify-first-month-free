@@ -1,0 +1,18 @@
+api_version = "2026-07"
+
+[[extensions]]
+name = "t:name"
+handle = "membership-first-month-free"
+type = "function"
+description = "t:description"
+
+  [[extensions.targeting]]
+  target = "cart.lines.discounts.generate.run"
+  input_query = "src/cart_lines_discounts_generate_run.graphql"
+  export = "cart_lines_discounts_generate_run"
+
+  [extensions.build]
+  typegen_command = "cargo check"
+  command = "cargo build --target=wasm32-unknown-unknown --release"
+  path = "target/wasm32-unknown-unknown/release/membership-first-month-free.wasm"
+  watch = [ "src/**/*.rs" ]
